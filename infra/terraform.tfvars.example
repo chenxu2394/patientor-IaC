@@ -1,0 +1,6 @@
+app_name       = "patientor-60236434"
+rg_name        = "patientor-rg"
+location       = "northeurope"
+
+subscription_id = "b23b9e68-9560-4646-9890-122096024715"
+tenant_id       = "68d4533c-eae6-4833-99cc-7a9704ac870b"
