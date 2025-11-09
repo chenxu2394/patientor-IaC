@@ -52,7 +52,13 @@ A sample is provided in `infra/terraform.tfvars.example`.
 ```sh
 # Clone and enter the repo
 git clone https://github.com/chenxu2394/patientor-IaC.git
-cd patientor-IaC/infra
+cd infra
+
+# Authenticate Azure CLI if not already
+az login # or `az login --tenant TENANT_ID`
+
+# Show subscription_id and tenant_id after login
+az account show --query "{subscriptionId:id, tenantId:tenantId}"
 
 # Create your tfvars and edit required values
 cp terraform.tfvars.example terraform.tfvars
@@ -61,9 +67,6 @@ cp terraform.tfvars.example terraform.tfvars
 # - app_name (globally unique)
 # - rg_name
 # - location
-
-# Authenticate Azure CLI if not already
-az login # or `az login --tenant TENANT_ID`
 
 # Deploy (idempotent converge)
 terraform init -reconfigure
